@@ -86,6 +86,7 @@ public struct MeshView: UIViewRepresentable {
 		}
 		context.coordinator.renderer.mtkView(view, drawableSizeWillChange: view.drawableSize)
 		context.coordinator.renderer.subdivisions = subdivisions
+        context.coordinator.renderer.grainAlpha = grainAlpha
 	}
 	
 	public func makeCoordinator() -> Coordinator {
@@ -169,6 +170,7 @@ public struct MeshView: NSViewRepresentable {
 		}
 		context.coordinator.renderer.mtkView(view, drawableSizeWillChange: view.drawableSize)
 		context.coordinator.renderer.subdivisions = subdivisions
+        context.coordinator.renderer.grainAlpha = grainAlpha
 	}
 	
 	public func makeCoordinator() -> Coordinator {

@@ -18,13 +18,13 @@ public final class MetalMeshRenderer: NSObject, MTKViewDelegate {
 	var viewportSize: vector_float2 = .zero
 	
 	var subdivisions: Int
+    var grainAlpha: Float
 	let meshDataProvider: MeshDataProvider
-    let grainAlpha: Float
 	
     public init(metalKitView mtkView: MTKView, meshDataProvider: MeshDataProvider, grainAlpha: Float, subdivisions: Int = 18) {
 		self.subdivisions = subdivisions
-		self.meshDataProvider = meshDataProvider
         self.grainAlpha = grainAlpha
+		self.meshDataProvider = meshDataProvider
 		
 		guard let device = mtkView.device,
 			  let defaultLibrary = try? device.makeDefaultLibrary(bundle: .module)
